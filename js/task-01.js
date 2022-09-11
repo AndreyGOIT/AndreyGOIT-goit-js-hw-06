@@ -1,11 +1,12 @@
 const listWithClass = document.querySelectorAll(".item");
-console.log(listWithClass);
-// console.log(`Number of categories: ${listWithClass.length}`);
+// console.log(listWithClass);
+console.log(`Number of categories: ${listWithClass.length}`);
+console.log("");
 
-for (let i = 0; i < listWithClass.length; i += 1) {
-    console.log(`Category: ${listWithClass[i].firstElementChild.textContent}`);
-    console.log(`Category: ${listWithClass[i].lastElementChild}`);
-    // console.log(listWithClass[i].children[i+1].children);
-    // console.log(`Èlement: ${listWithClass[i].children[i + 1].children.length}`);
+listWithClass.forEach(elem => {
+    console.log(`Category: ${elem.children[0].textContent}`);
+    console.log(`Èlements: ${elem.children[1].children.length}`);
+    console.log("");
+    });
 
-};
+/* ready */
