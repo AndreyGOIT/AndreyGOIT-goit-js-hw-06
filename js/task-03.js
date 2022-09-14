@@ -14,13 +14,17 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
-// const markup = images
-//   .map((image) => `<li class="list-item">${image}</li>`)
-//   .join("");
-// console.log(markup);
+const markup = images
+  .map((image) => `<li class="list-item"><img src:"${image.url}" alt:"${image.alt}" ></li>`)
+  .join("");
+console.log(markup);
 
-// gallery.insertAdjacentHTML("beforeend", markup);
-// console.log(gallery);
+
+
+gallery.insertAdjacentHTML("beforeend", markup);
+gallery.style.display = "flex";
+gallery.style.flexDirection = "row";
+console.log(gallery);
 
 // images.map(image => {
 //   const el = document.createElement("img");
@@ -29,14 +33,14 @@ const gallery = document.querySelector(".gallery");
 //   image.alt = images[0].alt;
 // });
 
-images.reduce((previousValue, image) => {
-  const el = document.createElement("img");
-console.log(images[previousValue]);
-  el.src = images[previousValue].url;
-  el.alt = images[previousValue].alt;
-  previousValue + 1;
-}, 0);
-console.log(images);
+// images.reduce((previousValue, image) => {
+//   const el = document.createElement("img");
+// console.log(images[previousValue]);
+//   el.src = images[previousValue].url;
+//   el.alt = images[previousValue].alt;
+//   previousValue + 1;
+// }, 0);
+// console.log(images);
 // image.src = "https://placeimg.com/640/480/nature";
 // image.alt = "Nature";
 // <img src="https://placeimg.com/640/480/nature" alt="Nature" />
