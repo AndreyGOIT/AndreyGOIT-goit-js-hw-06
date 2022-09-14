@@ -22,3 +22,12 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.list-item {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* gap: 30px; */
+  width: 350px;
+  height: 200px;
+}
