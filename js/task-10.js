@@ -20,44 +20,38 @@ const handleClick = (event) => {
 
 inputNumber.addEventListener("input", handleClick);
 
-
-
 const createBoxes = (event) => {
   let counter = 1;
+  let boxWidth = 30;
+  let boxHeigth = 30;
 
   while (counter <= inputNumber.value) {
     const lastItem = document.createElement("div");
+    const color = getRandomHexColor();
 
     boxes.append(lastItem);
-    boxes.lastElementChild.style.width = "30px";
-    boxes.lastElementChild.style.height = "30px";
+    boxes.lastElementChild.style.width = boxWidth + "px";
+    boxes.lastElementChild.style.height = boxHeigth + "px";
     boxes.lastElementChild.classList.add("box");
-    boxes.lastElementChild.style.backgroundColor = "blue";
-    counter += 1;
+    boxes.lastElementChild.style.backgroundColor = color;
 
-    function getRandomHexColor() {
-  // const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    };
-    const color = getRandomHexColor();
-    // getRandomHexColor();
-    console.log(color);
-  };
-  // boxes.lastElementChild.style.backgroundColor = "color";
+    boxWidth += 10;
+    boxHeigth += 10;
+    counter += 1;
+  }
+  console.log(`Созданы и вложены ${inputNumber.value} div`);
   console.log(boxes);
 };
 createBtn.addEventListener("click", createBoxes);
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 // Размеры самого первого <div> - 30px на 30px.
 // Каждый элемент после первого, должен быть шире и выше предыдущего на 10px.
 // Все элементы должены иметь случайный цвет фона в формате HEX.
 // Используй готовую функцию getRandomHexColor для получения цвета.
 
-// function getRandomHexColor() {
-//   return console.log(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
-// };
-
-// createBtn.addEventListener("click", getRandomHexColor);
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes,
 // тем самым удаляя все созданные элементы.
 
@@ -68,6 +62,7 @@ const destroyBoxes = () => {
     const firstBox = document.querySelector(".box");
     firstBox.remove();
   }
+  console.log(`Все вложенные в boxes div удалены`);
   console.log(boxes);
 };
 
